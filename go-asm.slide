@@ -1,0 +1,66 @@
+Go Assembly
+
+Simon Pratt
+
+simon@pr4tt.com
+http://pr4tt.com
+@simondavidpratt
+
+* Summary
+
+Go uses a machine-independent assembly language as an intermediate
+representation between Go code and native binary.
+
+* Contents
+
+- Go compilation process
+- Go's assembly language
+- But seriously, why though?
+- How is it different from others?
+- Why is this useful to know?
+
+* Go compilation process
+
+TODO
+
+* What does Go assembly look like?
+
+.iframe https://goasm.herokuapp.com/ 600 1000
+
+* Why does it look this way?
+
+Plan 9.
+
+TODO
+
+* Why did Rob Pike do this?
+
+- Compilation to a single intermediate language avoids duplication.
+- Translation from Go assembly to any other assembly is simple.
+
+* Do other language toolchains have similar things?
+
+Yes.
+
+- GCC has GENERIC, GIMPLE, and RTL.
+- LLVM has IR.
+
+* How are they different?
+
+TODO
+
+* Resources
+
+Rob Pike's 2016 Talk:
+.link https://www.youtube.com/watch?v=KINIAgRpkDA
+
+Rob Pike's 2016 Slides
+.link https://talks.golang.org/2016/asm.slide#1
+
+The design of LLVM
+.link http://www.aosabook.org/en/llvm.html
+
+GCC's intermediate representations
+.link https://gcc.gnu.org/onlinedocs/gccint/GENERIC.html
+.link https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html
+.link https://gcc.gnu.org/onlinedocs/gccint/RTL.html

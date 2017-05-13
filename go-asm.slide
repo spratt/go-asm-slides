@@ -1,4 +1,4 @@
-Go Assembly
+The Go Assembler
 
 Simon Pratt
 
@@ -6,34 +6,64 @@ simon@pr4tt.com
 http://pr4tt.com
 @simondavidpratt
 
-* Summary
+* What is Go's compilation process?
 
 Go uses a machine-independent assembly language as an intermediate
-representation between Go code and native binary.
+representation between Go code and native binary.  Go's assembler
+takes this assembly and produces native binaries.
 
-* Contents
+* Why should I care?
 
-- Go compilation process
-- Go's assembly language
-- But seriously, why though?
-- How is it different from others?
-- Why is this useful to know?
+In general, it's useful to know what's going on underneath the layers
+of abstraction.
 
-* Go compilation process
+In particular, sometimes it's useful to bypass that abstraction, e.g.,
+for performance or if something breaks.
 
-TODO
+* Questions
+
+- What is assembly?
+- What does Go's assembly language look like?
+- Why does it look this way?
+- Why have an intermediate representation?
+- Do other language toolchains have intermediate representations?
+- How is Go assembly different?
+
+* What is assembly?
+
+- Computers execute sequences of instructions.
+- An instruction is a sequence of bits.
+- Assembly is the human-readable version.
+- Example: National 32532
+
+  Binary                        Assembly
+  |00001|00000|000|11|          ADDD R1, R0 ; R0 = R1 + R0
+  |R1   |R0   |ADD|D |
 
 * What does Go assembly look like?
 
 .iframe https://goasm.herokuapp.com/ 600 1000
 
-* Why does it look this way?
+* Why does it look this way? (Short answer)
 
 Plan 9.
 
-TODO
+* Why does it look this way? (Long answer)
 
-* Why did Rob Pike do this?
+1986: Ken Thompson wrote a Plan 9 C compiler for the National 32000
+architecture (among others), which generated assembly pseudocode.
+Assembly pseudocode would be translated by machine-specific
+assemblers.
+
+Earliest versions of Go used these same assemblers.
+
+Go 1.3: compiler generates (mostly) real instructions.
+
+Go 1.5: replace machine-specific assemblers with a single Go assembler
+and environment variables (GOOS and GOARCH).  Go assembly language
+based on National 32000.
+
+* Why an intermediate representation?
 
 - Compilation to a single intermediate language avoids duplication.
 - Translation from Go assembly to any other assembly is simple.
@@ -45,17 +75,33 @@ Yes.
 - GCC has GENERIC, GIMPLE, and RTL.
 - LLVM has IR.
 
-* How are they different?
+* How is Go assembly different?
 
 TODO
 
-* Resources
+* Resources 1
 
-Rob Pike's 2016 Talk:
-.link https://www.youtube.com/watch?v=KINIAgRpkDA
+Rob Pike's 2016 Talk on the Go Assembler
 
-Rob Pike's 2016 Slides
-.link https://talks.golang.org/2016/asm.slide#1
+- Video: [[https://www.youtube.com/watch?v=KINIAgRpkDA]]
+- Slides: [[https://talks.golang.org/2016/asm.slide]]
+
+A Quick Guide to Go's Assembler
+.link https://golang.org/doc/asm
+
+A Manual for the Plan 9 Assembler
+.link http://plan9.bell-labs.com/sys/doc/asm.html
+
+A Foray Into Go Assembly Programming
+.link https://blog.sgmansfield.com/2017/04/a-foray-into-go-assembly-programming/
+
+* Resources 2
+
+National 32532 Datasheet
+.link http://cpu-ns32k.net/files/NS32532.pdf
+
+Go & Assembly
+.link http://www.doxsey.net/blog/go-and-assembly
 
 The design of LLVM
 .link http://www.aosabook.org/en/llvm.html

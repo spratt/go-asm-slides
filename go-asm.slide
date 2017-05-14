@@ -134,20 +134,17 @@ Taken from [[https://en.wikipedia.org/wiki/Register_transfer_language]]
 
 Taken from [[https://idea.popcount.org/2013-07-24-ir-is-better-than-assembly/]]
 
-* Aside: Static Single Assignment (SSA)
+* An Example
 
-- In SSA form, each variable is assigned exactly once
-- Variables in the original language that change value become _versioned_
-- LLVM's IR is always in static single assignment (SSA) form
-- As of Go 1.6, Go generates SSA assembly
+- add2.go
+.code add2/add2.go
 
-* How is Go assembly different?
+- add2.s
+.code add2/add2.s
 
-Go ships with an assembler that takes Go assembly as its input
-language.  This means that it doesn't have to be an _intermediate_
-representation after all.
+* Example (part 2)
 
-* Summary
+.play hello.go
 
 * Resources (Primary)
 

@@ -50,9 +50,9 @@ In particular, sometimes it's useful to bypass that abstraction.
 - Assembly is the human-readable version.
 - Example: National 32532
 
-  Binary                        Assembly
-  |00001|00000|000|11|          ADDD R1, R0 ; R0 = R1 + R0
-  |R1   |R0   |ADD|D |
+  Binary                        Assembly             Pseudocode
+  00001 00000 000 11            ADDD R1, R0          R0 = R1 + R0
+  R1    R0    ADD D  
 
 * What does Go assembly look like?
 
@@ -70,8 +70,6 @@ Assembly pseudocode would be translated by machine-specific
 assemblers.
 
 Earliest versions of Go used these same assemblers.
-
-Go 1.3: compiler generates (mostly) real instructions.
 
 Go 1.5: replace machine-specific assemblers with a single Go assembler
 and environment variables (GOOS and GOARCH).  Go assembly language
@@ -167,10 +165,13 @@ A Manual for the Plan 9 Assembler
 A Foray Into Go Assembly Programming
 .link https://blog.sgmansfield.com/2017/04/a-foray-into-go-assembly-programming
 
-Goasm
-.link https://goasm.herokuapp.com
+SIMD Optimization in Go
+.link https://goroutines.com/asm
 
 * Resources (Supplemental)
+
+Goasm
+.link https://goasm.herokuapp.com
 
 National 32532 Datasheet
 .link http://cpu-ns32k.net/files/NS32532.pdf
@@ -182,6 +183,4 @@ The design of LLVM
 .link http://www.aosabook.org/en/llvm.html
 
 GCC's intermediate representations
-.link https://gcc.gnu.org/onlinedocs/gccint/GENERIC.html
-.link https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html
-.link https://gcc.gnu.org/onlinedocs/gccint/RTL.html
+[[https://gcc.gnu.org/onlinedocs/gccint/GENERIC.html][GENERIC]], [[https://gcc.gnu.org/onlinedocs/gccint/GIMPLE.html][GIMPLE]], [[https://gcc.gnu.org/onlinedocs/gccint/RTL.html][RTL]]

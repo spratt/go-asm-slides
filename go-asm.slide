@@ -43,6 +43,8 @@ In particular, sometimes it's useful to bypass that abstraction.
 
 * What is assembly?
 
+.image Computer.svg 227 467
+
 - Computers execute sequences of instructions.
 - An instruction is a sequence of bits.
 - Assembly is the human-readable version.
@@ -84,8 +86,8 @@ based on National 32000.
 
 Yes.
 
-- GCC C/C++ -> GENERIC -> GIMPLE -> RTL -> native binary
-- LLVM C/C++ -> IR -> native binary
+- GCC: C/C++ ➡ GENERIC ➡ GIMPLE ➡ RTL ➡ native binary
+- LLVM: C/C++ ➡ IR ➡ native binary
 
 * Do other language toolchains have similar things?  (GCC front-end)
 
@@ -173,8 +175,8 @@ Goasm
 National 32532 Datasheet
 .link http://cpu-ns32k.net/files/NS32532.pdf
 
-Go & Assembly (very out-of-date)
-.link http://www.doxsey.net/blog/go-and-assembly
+LLVM Language Reference
+.link http://llvm.org/docs/LangRef.html
 
 The design of LLVM
 .link http://www.aosabook.org/en/llvm.html

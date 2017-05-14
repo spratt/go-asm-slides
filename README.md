@@ -10,3 +10,10 @@ To present:
 $ go get golang.org/x/tools/cmd/present
 $ present
 ```
+
+To run the example:
+
+```
+go install
+go run hello.go
+```
